@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    background-color: gray;
+}
+.flex-item{
+    flex-basis: 200px;
+    padding: 20px;
+    margin: 20px;
+    background-color: darkgray;
+    font-size: 2rem;
+    font-family: sans-serif;
+    text-align: center;
+}
+#ok{
+    color: red;
+    border: 2px solid red;
+}
+#cancel{
+    color: white;
+    background-color: black;
+}
