@@ -2,19 +2,19 @@
 //     console.log("X = ", e.screenX)
 //     console.log("Y = ", e.screenY)
 // })
-let elems = document.getElementsByClassName('flex-item')
-console.log(elems)
-let x = 5
-for(let elem of elems){
-    elem.addEventListener('mousemove', function(e){
-        console.log("x = ", e.screenX, "y = ", e.screenY)
-        let x = 20
-        console.log(x)
-    })
-    elem.addEventListener('click', function(e){
-        console.log('this is x from click', x)
-    })
-}
+// let elems = document.getElementsByClassName('flex-item')
+// console.log(elems)
+// let x = 5
+// for(let elem of elems){
+//     elem.addEventListener('mousemove', function(e){
+//         console.log("x = ", e.screenX, "y = ", e.screenY)
+//         let x = 20
+//         console.log(x)
+//     })
+//     elem.addEventListener('click', function(e){
+//         console.log('this is x from click', x)
+//     })
+// }
 // ok.addEventListener('click', function (e) {
 //     let noElement = document.getElementById('no'); 
 //     if (noElement.classList.contains('toggleOn')) { 
@@ -55,50 +55,55 @@ for(let elem of elems){
 //     //     elem.innerText = 'ง่าย'
 //     // } 
 //     // else if (elem.innerText === 'ง่าย') { 
-//     //     elem.innerText === 'จริงๆ นะจ้ะ'  
+//     //     elem.innerText = 'จริงๆ นะจ้ะ'  
 //     // }
 //     // else if (elem.innerText === 'จริงๆ นะจ้ะ') { 
-//     //     elem.innerText === 'ok'  
+//     //     elem.innerText = 'ok'  
 //     // }
 // })
-let output = ''
-let outputElements = document.getElementById('output')
-function onOKClicked(e){
-    e.stopPropagation();
+// let output = ''
+// let outputElements = document.getElementById('output')
+// function onOKClicked(e){
+//     e.stopPropagation();
     // alert('ok clicked')
     // output += 'OK'
     // outputElements.innerText = output
-    addText('OK')
-}
-function onCancelClicked(e){
-    e.stopPropagation();
+//     addText('OK')
+// }
+// function onCancelClicked(e){
+//     e.stopPropagation();
     // alert(' cancel clicked')
     // output += 'Cancel'
     // outputElements.innerText = output
-    addText('Cancel')
-}
-function onNoClicked(e){
-    e.stopPropagation();
+//     addText('Cancel')
+// }
+// function onNoClicked(e){
+//     e.stopPropagation();
     // alert(' no clicked')
     // output += 'No'
     // outputElements.innerText = output
-    addText('No')
-}
-document.getElementById('container').onclick = function(){
-    output = ''
-    outputElements.innerText = output
-}
-let keyword = {
-    "ok" : "OK",
-    "cancel" : "Cancel",
-    "no" : "No"
-}
-function addText(input){
-    output = output + input + ' '
-    outputElements.innerText = output
-}
-document.getElementById('cancel').addEventListener('click',onCancelClicked)
-document.getElementById('no').onclick = onNoClicked
+//     addText('No')
+// }
+// document.getElementById('cancel').addEventListener('click',onCancelClicked)
+// document.getElementById('no').onclick = onNoClicked
 // document.getElementById('container').onclick = function(e){
 //     alert('container clicked')
 // }
+// document.getElementById('container').onclick = function(){
+//     output = ''
+//     outputElements.innerText = output
+// }
+var outputContainer = document.getElementById('output-container')
+var counter = 0;
+function addNode(){
+    newNode = document.createElement('div')
+    newNode.classList.add('flex-item')
+    newNode.setAttribute('id', counter)
+    newNode.innerText = counter
+    counter = counter+1
+    newNode.innerText = counter
+    outputContainer.appendChild(newNode)
+}
+function onOKClicked(e){
+    addNode()
+}
