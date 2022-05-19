@@ -8,8 +8,8 @@
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        <div class="container">
-            <div id="ok" class="flex-item">
+        <div class="container" id="container">
+            <div id="ok" class="flex-item" onclick="onOKClicked(event)">
                 ok
             </div>
             <div id="cancel" class="flex-item">
@@ -21,7 +21,10 @@
             <!-- <script type="text/javascript">
                 alert('Hellow world')
             </script> -->
-            <script type="text/javascript" src="./script.js"></script>
         </div>
+        <div id="output-container" class="output-container">
+            <div id="output" class="output-flex-item"></div>
+        </div>
+        <script type="text/javascript" src="./script.js"></script>
     </body>
 </html>
